@@ -42,8 +42,8 @@ const Navbar = () => {
                     <Link to='/login' className="btn btn-ghost px-1 hover:bg-green-500 text-white border-none"><IoMdLogIn />Login</Link>
                     <Link to='/register' className="btn btn-ghost hover:bg-green-500 px-1 text-white border-none"><FaUserEdit />Register</Link>
                     <div className="dropdown z-10 dropdown-hover dropdown-bottom dropdown-end">
-                        <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
-                            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-[#2AB7B1] object-cover cursor-pointer">
+                        <div tabIndex={0} role="button" className=" avatar">
+                            <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-[#228B22] object-cover cursor-pointer">
                                 <img alt="User Avatar" src={avatarImg} />
                             </div>
                         </div>
