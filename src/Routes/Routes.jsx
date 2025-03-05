@@ -5,6 +5,8 @@ import Register from "../Pages/Authentication/Register/Register";
 import Login from "../Pages/Authentication/Login/Login";
 import CreateEvent from "../Pages/CreateEvent/CreateEvent";
 import PrivateRoute from "./PrivateRoute";
+import AllEvents from "../Pages/AllEvents/AllEvents";
+import EventDetails from "../Pages/EventDetails/EventDetails";
 
 export const router = createBrowserRouter ([
     {
@@ -26,8 +28,16 @@ export const router = createBrowserRouter ([
                 element:<Login></Login>,
             },
             {
+                path: '/all-events',
+                element:<AllEvents></AllEvents>
+            },
+            {
                 path: '/create-event',
                 element:<PrivateRoute><CreateEvent></CreateEvent></PrivateRoute>,
+            },
+            {
+                path: '/event-details/:id',
+                element:<PrivateRoute><EventDetails></EventDetails></PrivateRoute>,
             }
         ]
     }

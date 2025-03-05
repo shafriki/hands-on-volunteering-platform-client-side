@@ -30,7 +30,7 @@ const Navbar = () => {
     const links = (
         <>
             <NavLink to='/' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>Home</NavLink>
-            <NavLink to='/events' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>All Events</NavLink>
+            <NavLink to='/all-events' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>All Events</NavLink>
             <NavLink to='/help-posts' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>All Help Posts</NavLink>
             <NavLink to='/create-event' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>Create Event</NavLink>
             <NavLink to='/create-help' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>Create Help Requests</NavLink>
