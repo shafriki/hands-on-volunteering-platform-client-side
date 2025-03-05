@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { IoMdMenu, IoMdLogIn } from "react-icons/io";
 import { FaUserEdit } from "react-icons/fa";
+import Swal from 'sweetalert2';
 import handson from '../../../assets/handson (1).png';
 import avatarImg from '../../../assets/images.png';
 import useAuth from "../../../Hooks/useAuth";
@@ -11,26 +12,29 @@ const Navbar = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(() => {
-        if (user) {
-            setIsLoggedIn(true);
-        } else {
-            setIsLoggedIn(false);
-        }
+        setIsLoggedIn(!!user);
     }, [user]);
 
     const handleLogout = () => {
         logOut();
         setIsLoggedIn(false); 
+        Swal.fire({
+            icon: 'success',
+            title: 'Logout Successful',
+            text: 'You have successfully logged out!',
+            showConfirmButton: false,
+            timer: 2000
+        });
     };
 
     const links = (
         <>
             <NavLink to='/' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>Home</NavLink>
-            <NavLink to='/' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>All Events</NavLink>
-            <NavLink to='/' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>All Help Posts</NavLink>
-            <NavLink to='/' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>Create Event</NavLink>
-            <NavLink to='/' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>Create Help Requests</NavLink>
-            <NavLink to='/' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>My Events</NavLink>
+            <NavLink to='/events' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>All Events</NavLink>
+            <NavLink to='/help-posts' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>All Help Posts</NavLink>
+            <NavLink to='/create-event' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>Create Event</NavLink>
+            <NavLink to='/create-help' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>Create Help Requests</NavLink>
+            <NavLink to='/my-events' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>My Events</NavLink>
         </>
     );
 

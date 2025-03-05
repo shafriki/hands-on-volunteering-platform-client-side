@@ -77,10 +77,9 @@ const Login = () => {
   return (
     <div
       className="relative bg-fixed min-h-screen bg-cover bg-center overflow-auto flex items-center justify-center"
-      style={{ backgroundImage: "url('https://i.ibb.co/SfRz7q8/loginbg.jpg')" }}
+      style={{ backgroundImage: "url('https://i.ibb.co.com/yTNXT8J/motso.png')" }}
     >
 
-      <div className="absolute inset-0 bg-black bg-opacity-80 z-0"></div>
 
       <div
         className="relative max-w-xl mx-3 md:mx-0 w-full p-10 bg-white bg-opacity-20 backdrop-blur-sm shadow-lg z-10 rounded-md"
