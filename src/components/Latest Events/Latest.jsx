@@ -11,24 +11,21 @@ const Latest = () => {
 
             <Marquee autoFill='ture' pauseOnHover='ture'>
                 <Link className='ml-10 flex items-center gap-1'><MdLabelImportant  className='text-[#228B22] text-xl'/>
-                Dhaka City Marathon 2024</Link>
+                Volunteer Recruitment by Volunteer for Bangladesh (VBD)</Link>
 
-                <Link className='ml-10 flex items-center gap-1'><MdLabelImportant  className='text-[#228B22] text-xl'/>Chattogram Coastal Run
+                <Link className='ml-10 flex items-center gap-1'><MdLabelImportant  className='text-[#228B22] text-xl'/>Festival of Youth 2025 – Creating A New Bangladesh</Link>
+
+                <Link className='ml-10 flex items-center gap-1'><MdLabelImportant  className='text-[#228B22] text-xl'/>Volunteer Appreciation Day Activities</Link>
+
+                <Link className='ml-10 flex items-center gap-1'><MdLabelImportant  className='text-[#228B22] text-xl'/>International Volunteer Day Celebrations</Link>
+
+                <Link className='ml-10 flex items-center gap-1'><MdLabelImportant  className='text-[#228B22] text-xl'/>Kundalini Inner Energy Awakening Meditation Sessions
                 </Link>
 
-                <Link className='ml-10 flex items-center gap-1'><MdLabelImportant  className='text-[#228B22] text-xl'/>Sylhet Tea Garden Trail
+                <Link className='ml-10 flex items-center gap-1'><MdLabelImportant  className='text-[#228B22] text-xl'/>World Vision Singapore Volunteer Trip to Wazirpur
                 </Link>
 
-                <Link className='ml-10 flex items-center gap-1'><MdLabelImportant  className='text-[#228B22] text-xl'/>Rajshahi Heritage Marathon
-                </Link>
-
-                <Link className='ml-10 flex items-center gap-1'><MdLabelImportant  className='text-[#228B22] text-xl'/>Cox’s Bazar Beach Run
-                </Link>
-
-                <Link className='ml-10 flex items-center gap-1'><MdLabelImportant  className='text-[#228B22] text-xl'/>Khulna Eco Run
-                </Link>
-
-                <Link className='ml-10 flex items-center gap-1'><MdLabelImportant  className='text-[#228B22] text-xl'/>Barisal Riverfront Run
+                <Link className='ml-10 flex items-center gap-1'><MdLabelImportant  className='text-[#228B22] text-xl'/>Volunteer Opportunities via Jora Bangladesh
                 </Link>
 
             </Marquee>
