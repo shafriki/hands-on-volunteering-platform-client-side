@@ -1,0 +1,28 @@
+{
+    "programs": [
+      {
+        "name": "Education",
+        "image": "https://i.ibb.co.com/vCDHjYjw/edu.png"
+      },
+      {
+        "name": "Healthcare",
+        "image": "https://i.ibb.co.com/qMc69BcD/health.png"
+      },
+      {
+        "name": "Climate Change",
+        "image": "https://i.ibb.co.com/35XRsQJX/climate.png"
+      },
+      {
+        "name": "Good Governance",
+        "image": "  https://i.ibb.co.com/Kp3NgqY6/govor.png"
+      },
+      {
+        "name": "Youth",
+        "image": "https://i.ibb.co.com/pvL9b6Fm/youth.png"
+      },
+      {
+        "name": "Women",
+        "image": "https://i.ibb.co.com/M5S897n3/women.png"
+      }
+    ]
+  }

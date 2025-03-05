@@ -15,13 +15,13 @@ const AboutUs = () => {
     </h2>
 
     <div className="grid grid-cols-2 gap-1 md:gap-4">
-      <img src="https://i.ibb.co.com/hg1XtZ0/a-1.webp" className="w-full h-32 md:h-48 object-cover rounded-lg"/>
+      <img src="https://i.ibb.co.com/vCDHjYjw/edu.png" className="w-full h-32 md:h-48 object-cover rounded-lg"/>
       
-      <img src="https://i.ibb.co.com/556qsrW/a-2.webp" className="w-full h-32 md:h-48 object-cover rounded-lg" />
+      <img src="https://i.ibb.co.com/qMc69BcD/health.png" className="w-full h-32 md:h-48 object-cover rounded-lg" />
 
-      <img src="https://i.ibb.co.com/D45pbqm/a4.webp" className="w-full h-32 md:h-48 object-cover rounded-lg" />
+      <img src="https://i.ibb.co.com/35XRsQJX/climate.png" className="w-full h-32 md:h-48 object-cover rounded-lg" />
       
-      <img src="https://i.ibb.co.com/gDkFNcn/a-4.webp" className="w-full h-32 md:h-48 object-cover rounded-lg" />
+      <img src="https://i.ibb.co.com/pvL9b6Fm/youth.png" className="w-full h-32 md:h-48 object-cover rounded-lg" />
     </div>
   </Fade>
 </div>
