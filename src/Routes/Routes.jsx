@@ -19,15 +19,15 @@ export const router = createBrowserRouter ([
             },
             {
                 path: '/register',
-                element:<Register></Register>
+                element:<Register></Register>,
             },
             {
                 path: '/login',
-                element:<Login></Login>
+                element:<Login></Login>,
             },
             {
                 path: '/create-event',
-                element:<PrivateRoute><CreateEvent></CreateEvent></PrivateRoute>
+                element:<PrivateRoute><CreateEvent></CreateEvent></PrivateRoute>,
             }
         ]
     }
