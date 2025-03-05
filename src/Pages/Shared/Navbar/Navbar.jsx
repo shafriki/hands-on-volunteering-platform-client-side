@@ -8,12 +8,12 @@ import avatarImg from '../../../assets/images.png';
 const Navbar = () => {
 
     const links = <>
-            <NavLink to='/' className={({ isActive }) => isActive ? 'font-bold text-green-500' : 'text-[#ECF0F1]'}>Home</NavLink>
-            <NavLink to='/' className={({ isActive }) => isActive ? 'font-bold text-green-500' : 'text-[#ECF0F1]'}>All Events</NavLink>
-            <NavLink to='/' className={({ isActive }) => isActive ? 'font-bold text-green-500' : 'text-[#ECF0F1]'}>All Help Posts</NavLink>
-            <NavLink to='/' className={({ isActive }) => isActive ? 'font-bold text-green-500' : 'text-[#ECF0F1]'}>Create Event</NavLink>
-            <NavLink to='/' className={({ isActive }) => isActive ? 'font-bold text-green-500' : 'text-[#ECF0F1]'}>Create Help Requests</NavLink>
-            <NavLink to='/' className={({ isActive }) => isActive ? 'font-bold text-green-500' : 'text-[#ECF0F1]'}>My Events</NavLink>
+            <NavLink to='/' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>Home</NavLink>
+            <NavLink to='/' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>All Events</NavLink>
+            <NavLink to='/' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>All Help Posts</NavLink>
+            <NavLink to='/' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>Create Event</NavLink>
+            <NavLink to='/' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>Create Help Requests</NavLink>
+            <NavLink to='/' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>My Events</NavLink>
 
     </>
     return (
