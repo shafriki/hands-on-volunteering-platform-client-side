@@ -3,13 +3,13 @@ import { createContext, useEffect, useState } from "react";
 import {
   GoogleAuthProvider,
   signInWithEmailAndPassword,
-  signInWithPopup,
   getAuth,
   signOut,
   createUserWithEmailAndPassword,
   updateProfile,
 } from "firebase/auth";
 import { app } from "../firebase/firebase.config";
+import axios from "axios";
 
 // Create Authentication Context
 export const AuthContext = createContext(null);
@@ -40,24 +40,36 @@ const AuthProvider = ({ children }) => {
     return signInWithEmailAndPassword(auth, email, password);
   };
 
-  // Function to sign in with Google
-  const signInWithGoogle = () => {
-    setLoading(true);
-    return signInWithPopup(auth, googleProvider);
-  };
-
   // Function to log out
   const logOut = () => {
     setLoading(true);
+    localStorage.removeItem("authToken"); 
     return signOut(auth);
   };
 
-  // Listen for auth state changes
+  const getJWTToken = async (email) => {
+    const response = await axios.post(
+      `${import.meta.env.VITE_API_URL}/jwt`, 
+      { email }
+    );
+    return response.data.token;
+  };
+
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((currentUser) => {
-      setUser(currentUser);
+    const unsubscribe = auth.onAuthStateChanged(async (currentUser) => {
+      setLoading(true);
+      if (currentUser?.email) {
+        setUser(currentUser);
+
+        const token = await getJWTToken(currentUser.email);
+        localStorage.setItem("authToken", token); 
+      } else {
+        setUser(currentUser);
+        localStorage.removeItem("authToken"); 
+      }
       setLoading(false);
     });
+
     return () => unsubscribe();
   }, []);
 
@@ -68,7 +80,6 @@ const AuthProvider = ({ children }) => {
     createUser,
     updateUserProfile,
     signIn,
-    signInWithGoogle,
     logOut,
   };
 

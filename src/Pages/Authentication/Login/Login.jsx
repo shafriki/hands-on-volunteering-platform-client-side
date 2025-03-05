@@ -85,9 +85,9 @@ const Login = () => {
         className="relative max-w-xl mx-3 md:mx-0 w-full p-10 bg-white bg-opacity-20 backdrop-blur-sm shadow-lg z-10 rounded-md"
         data-aos="fade-up"
       >
-        <h2 className="text-3xl font-bold text-center text-white mb-2">Welcome Back</h2>
-        <p className="text-white text-center text-xs md:text-sm">Glad to see you again</p>
-        <p className="text-white mb-4 text-center text-xs md:text-sm">Log in to your account below</p>
+        <h2 className="text-3xl font-bold text-center text-black mb-2">Welcome Back</h2>
+        <p className="text-black text-center text-xs md:text-sm">Glad to see you again</p>
+        <p className="text-black mb-4 text-center text-xs md:text-sm">Log in to your account below</p>
 
         <form className="space-y-6" onSubmit={handleSubmit}>
           <div className="relative flex items-center">
@@ -135,21 +135,13 @@ const Login = () => {
 
         <div className="flex items-center justify-center px-1 mt-4 pb-3">
           <div className="flex-grow border-t border-gray-400"></div>
-          <div className="mx-4 text-gray-300">Or</div>
           <div className="flex-grow border-t border-gray-400"></div>
         </div>
 
-        <button
-          type="button"
-          className="w-full px-4 py-2 font-semibold text-white bg-[#0f162f] hover:bg-[#070A16] ease-in-out btn border-none rounded-md"
-          onClick={handleGoogleSignIn}
-        >
-          <FcGoogle className="text-2xl" /> Login with Google
-        </button>
 
-        <p className="text-sm text-center text-white mt-4">
+        <p className="text-sm text-center text-black mt-4">
           New Here?{' '}
-          <Link to="/register" className="font-medium text-white hover:underline">
+          <Link to="/register" className="font-medium text-black hover:underline">
             Create an Account
           </Link>
         </p>

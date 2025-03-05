@@ -98,15 +98,11 @@ const Register = () => {
     <div
       className="relative bg-fixed min-h-screen bg-cover bg-center overflow-auto flex items-center justify-center"
       style={{
-        backgroundImage: "url('https://i.ibb.co.com/wdM0rhy/newspapers-444453-1280.jpg')",
+        backgroundImage: "url('https://i.ibb.co.com/yTNXT8J/motso.png')",
       }}
     >
-      {/* <Helmet>
-        <title>Register | প্রতীক্ষা নিউজ</title>
-      </Helmet> */}
 
       <ToastContainer />
-      <div className="absolute inset-0 bg-black bg-opacity-80 z-0"></div>
 
       {/* Register form */}
       <div
@@ -114,8 +110,8 @@ const Register = () => {
         data-aos="fade-up"
         data-aos-duration="1000"
       >
-        <h2 className="text-3xl font-bold text-center text-white mb-2">Create an Account</h2>
-        <p className="text-white text-center text-xs md:text-sm">Join us in making a difference!</p>
+        <h2 className="text-3xl font-bold text-center text-black mb-2">Create an Account</h2>
+        <p className="text-black text-center text-xs md:text-sm">Join us in making a difference!</p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="relative flex items-center mt-4">
@@ -192,9 +188,9 @@ const Register = () => {
           <div className="flex-grow border-t border-gray-400"></div>
         </div>
 
-        <p className="text-sm text-center text-white mt-1">
+        <p className="text-sm text-center text-black mt-1">
           Already have an account?{" "}
-          <Link to="/login" className="font-medium text-white hover:underline">
+          <Link to="/login" className="font-medium text-black hover:underline">
             Login
           </Link>
         </p>
