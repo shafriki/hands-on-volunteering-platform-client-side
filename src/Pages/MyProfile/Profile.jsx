@@ -123,6 +123,12 @@ const Profile = () => {
           >
             Back To Home
           </button>
+          <button
+            onClick={() => navigate('/my-join-events')} // assuming you have a route for volunteers
+            className="btn px-2 md:px-6 bg-blue-500 hover:bg-blue-600 border-none text-white"
+          >
+            Volunteer History
+          </button>
         </div>
       </div>
 
