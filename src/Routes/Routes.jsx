@@ -10,6 +10,7 @@ import EventDetails from "../Pages/EventDetails/EventDetails";
 import MyEvents from "../Pages/MyEvents/MyEvents";
 import UpdateEvents from "../Pages/MyEvents/UpdateEvents";
 import MyJoiningEvent from "../Pages/MyJoiningEvents/MyJoiningEvent";
+import Profile from "../Pages/MyProfile/Profile";
 
 export const router = createBrowserRouter ([
     {
@@ -53,6 +54,10 @@ export const router = createBrowserRouter ([
             {
                 path: '/my-join-events',
                 element:<PrivateRoute><MyJoiningEvent></MyJoiningEvent></PrivateRoute>,
+            },
+            {
+                path: '/profile',
+                element:<PrivateRoute><Profile></Profile></PrivateRoute>,
             },
         ]
     }
