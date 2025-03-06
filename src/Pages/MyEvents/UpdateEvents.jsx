@@ -38,7 +38,7 @@ const UpdateEvents = () => {
   const onSubmit = async (data) => {
     const updatedEventData = {
       ...data,
-      email: user?.email,  // Make sure email is sent for updates
+      email: user?.email,  
     };
 
     try {
@@ -82,11 +82,11 @@ const UpdateEvents = () => {
       {/* Banner */}
       <div
         style={{
-          backgroundImage: "url('https://i.ibb.co.com/SfRz7q8/loginbg.jpg')",
+          backgroundImage: "url('https://i.ibb.co.com/ksVmHLdR/129040833-gettyimages-1386409598-jpg.webp')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
-        className="hero-overlay h-[190px] md:h-[300px] bg-opacity-60 text-[#02faee]"
+        className="hero-overlay h-[190px] md:h-[300px] bg-opacity-60 text-green-700"
       >
         <div className="relative max-w-7xl mx-auto py-8 px-3 md:py-16 md:px-6 text-left">
           <h1 className="font-bold text-lg md:text-4xl mt-20 md:mt-16 text-center">
