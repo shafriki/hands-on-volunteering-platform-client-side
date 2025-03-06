@@ -79,7 +79,7 @@ const MyEvents = () => {
                                 <td>{event.date}</td>
                                 <td>
                                     <Link to={`/event-details/${event._id}`}><button className="btn btn-xs text-blue-600"><CiCircleMore /> View</button></Link>
-                                    <Link to={`/my-events/update/${event._id}`}><button className="btn btn-xs text-green-600"><MdOutlineEdit /> Edit</button></Link>
+                                    <Link to={`/my-event/update/${event._id}`}><button className="btn btn-xs text-green-600"><MdOutlineEdit /> Edit</button></Link>
                                     <button onClick={() => { setIsOpen(true); setSelectedId(event._id); }} className="btn btn-xs text-red-600"><MdDelete /> Delete</button>
                                 </td>
                             </tr>
