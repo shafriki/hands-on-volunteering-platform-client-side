@@ -19,12 +19,6 @@ const EventDetails = () => {
     enabled: !!id,
   });
 
-  useEffect(() => {
-    if (id && !hasViewCountUpdated.current) {
-      axios.put(`${import.meta.env.VITE_API_URL}/event/view/${id}`);
-      hasViewCountUpdated.current = true;
-    }
-  }, [id]);
 
   // Handle Join Event button click
   const handleJoinEvent = async () => {
