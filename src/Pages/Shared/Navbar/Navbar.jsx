@@ -31,11 +31,12 @@ const Navbar = () => {
         <>
             <NavLink to='/' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>Home</NavLink>
             <NavLink to='/all-events' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>All Events</NavLink>
-            <NavLink to='/help-posts' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>All Help Posts</NavLink>
             
             
             {isLoggedIn && (
                 <>
+                <NavLink to='/all-help-post' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>All Help Posts</NavLink>
+            
                 <NavLink to='/create-event' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>Create Event</NavLink>
                 
                 <NavLink to='/create-help-request' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>Create Help Requests</NavLink>

@@ -1,20 +1,12 @@
-/* eslint-disable react/prop-types */
-import { createContext, useEffect, useState } from "react";
-import {
-  GoogleAuthProvider,
-  signInWithEmailAndPassword,
-  getAuth,
-  signOut,
-  createUserWithEmailAndPassword,
-  updateProfile,
-} from "firebase/auth";
+import { useEffect, useState } from "react";
+import { createContext } from "react";
+import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { app } from "../firebase/firebase.config";
 import axios from "axios";
 
 // Create Authentication Context
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
-const googleProvider = new GoogleAuthProvider();
 
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
@@ -43,34 +35,35 @@ const AuthProvider = ({ children }) => {
   // Function to log out
   const logOut = () => {
     setLoading(true);
-    localStorage.removeItem("authToken"); 
+    localStorage.removeItem("authToken");
     return signOut(auth);
   };
 
-  const getJWTToken = async (email) => {
-    const response = await axios.post(
-      `${import.meta.env.VITE_API_URL}/jwt`, 
-      { email }
-    );
-    return response.data.token;
-  };
-
+  // onAuthStateChanged and JWT token handling
   useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged(async (currentUser) => {
+    const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       setLoading(true);
       if (currentUser?.email) {
         setUser(currentUser);
 
-        const token = await getJWTToken(currentUser.email);
-        localStorage.setItem("authToken", token); 
+        // Get JWT token and store it in localStorage
+        const response = await axios.post(
+          `${import.meta.env.VITE_API_URL}/jwt`,
+          { email: currentUser.email }
+        );
+
+        // Save the token in localStorage
+        localStorage.setItem("authToken", response.data.token);
       } else {
         setUser(currentUser);
-        localStorage.removeItem("authToken"); 
+        localStorage.removeItem("authToken"); // Remove token on logout
       }
       setLoading(false);
     });
 
-    return () => unsubscribe();
+    return () => {
+      unsubscribe();
+    };
   }, []);
 
   // Authentication info to be shared
@@ -84,7 +77,9 @@ const AuthProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={authInfo}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={authInfo}>
+      {children}
+    </AuthContext.Provider>
   );
 };
 

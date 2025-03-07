@@ -12,6 +12,7 @@ import UpdateEvents from "../Pages/MyEvents/UpdateEvents";
 import MyJoiningEvent from "../Pages/MyJoiningEvents/MyJoiningEvent";
 import Profile from "../Pages/MyProfile/Profile";
 import HelpRequest from "../Pages/HelpRequest/HelpRequest";
+import AllHelpPost from "../Pages/AllHelpPost/AllHelpPost";
 
 export const router = createBrowserRouter ([
     {
@@ -59,6 +60,10 @@ export const router = createBrowserRouter ([
             {
                 path: '/create-help-request',
                 element:<PrivateRoute><HelpRequest></HelpRequest></PrivateRoute>,
+            },
+            {
+                path: '/all-help-post',
+                element:<PrivateRoute><AllHelpPost></AllHelpPost></PrivateRoute>,
             },
             {
                 path: '/profile',
