@@ -11,6 +11,7 @@ import MyEvents from "../Pages/MyEvents/MyEvents";
 import UpdateEvents from "../Pages/MyEvents/UpdateEvents";
 import MyJoiningEvent from "../Pages/MyJoiningEvents/MyJoiningEvent";
 import Profile from "../Pages/MyProfile/Profile";
+import HelpRequest from "../Pages/HelpRequest/HelpRequest";
 
 export const router = createBrowserRouter ([
     {
@@ -54,6 +55,10 @@ export const router = createBrowserRouter ([
             {
                 path: '/my-join-events',
                 element:<PrivateRoute><MyJoiningEvent></MyJoiningEvent></PrivateRoute>,
+            },
+            {
+                path: '/create-help-request',
+                element:<PrivateRoute><HelpRequest></HelpRequest></PrivateRoute>,
             },
             {
                 path: '/profile',

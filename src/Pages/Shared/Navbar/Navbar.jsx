@@ -38,7 +38,7 @@ const Navbar = () => {
                 <>
                 <NavLink to='/create-event' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>Create Event</NavLink>
                 
-                <NavLink to='/create-help' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>Create Help Requests</NavLink>
+                <NavLink to='/create-help-request' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>Create Help Requests</NavLink>
 
                 <NavLink to='/my-events' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>My Events</NavLink>
 
