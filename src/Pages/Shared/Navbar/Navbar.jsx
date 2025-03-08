@@ -47,6 +47,8 @@ const Navbar = () => {
 
                 <NavLink to='/create-team' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>Create Team</NavLink>
 
+                <NavLink to='/join-team' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>Join Team</NavLink>
+
                 </>
             )}
             

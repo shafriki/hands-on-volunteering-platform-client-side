@@ -14,6 +14,7 @@ import Profile from "../Pages/MyProfile/Profile";
 import HelpRequest from "../Pages/HelpRequest/HelpRequest";
 import AllHelpPost from "../Pages/AllHelpPost/AllHelpPost";
 import CreateTeam from "../Pages/CreateTeam/CreateTeam";
+import JoinTeam from "../Pages/JoinTeam/JoinTeam";
 
 export const router = createBrowserRouter ([
     {
@@ -74,6 +75,10 @@ export const router = createBrowserRouter ([
                 path: '/create-team',
                 element:<PrivateRoute><CreateTeam></CreateTeam></PrivateRoute>,
             },
+            {
+                path: '/join-team',
+                element:<PrivateRoute><JoinTeam></JoinTeam></PrivateRoute>,
+            }
         ]
     }
 ])

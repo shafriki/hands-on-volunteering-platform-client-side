@@ -140,7 +140,7 @@ const CreateTeam = () => {
                     )}
                     <button
                         type="submit"
-                        className="w-full btn border-none bg-[#2f80ed] text-white py-2 px-4 rounded hover:bg-[#1e6091] transition"
+                        className="w-full btn border-none bg-[#2fed52] text-white py-2 px-4 rounded hover:bg-[#1e913f] transition"
                         disabled={loading}
                     >
                         {loading ? <BeatLoader size={10} color="#ffffff" /> : "Create Team"}
