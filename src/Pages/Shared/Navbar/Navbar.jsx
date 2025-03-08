@@ -45,6 +45,8 @@ const Navbar = () => {
 
                 <NavLink to='/my-join-events' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>My Joining Events</NavLink>
 
+                <NavLink to='/create-team' className={({ isActive }) => isActive ? 'font-bold text-[#228B22]' : 'text-[#ECF0F1]'}>Create Team</NavLink>
+
                 </>
             )}
             

@@ -13,6 +13,7 @@ import MyJoiningEvent from "../Pages/MyJoiningEvents/MyJoiningEvent";
 import Profile from "../Pages/MyProfile/Profile";
 import HelpRequest from "../Pages/HelpRequest/HelpRequest";
 import AllHelpPost from "../Pages/AllHelpPost/AllHelpPost";
+import CreateTeam from "../Pages/CreateTeam/CreateTeam";
 
 export const router = createBrowserRouter ([
     {
@@ -68,6 +69,10 @@ export const router = createBrowserRouter ([
             {
                 path: '/profile',
                 element:<PrivateRoute><Profile></Profile></PrivateRoute>,
+            },
+            {
+                path: '/create-team',
+                element:<PrivateRoute><CreateTeam></CreateTeam></PrivateRoute>,
             },
         ]
     }
