@@ -26,6 +26,12 @@ const CreateTeam = () => {
             return;
         }
 
+        // Handling inviteEmails for private teams
+        let inviteEmailsArray = [];
+        if (teamType === "private" && inviteEmails.trim()) {
+            inviteEmailsArray = inviteEmails.split(",").map(email => email.trim()).filter(email => email); // Filter out empty values
+        }
+
         try {
             setLoading(true);
             const response = await axiosSecure.post(
@@ -34,7 +40,7 @@ const CreateTeam = () => {
                     teamName,
                     description,
                     teamType,
-                    inviteEmails: teamType === "private" ? inviteEmails.split(",").map(email => email.trim()) : [],
+                    inviteEmails: inviteEmailsArray,
                     email: user?.email,
                 },
                 {

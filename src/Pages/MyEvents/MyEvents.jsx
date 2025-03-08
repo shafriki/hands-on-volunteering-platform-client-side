@@ -27,6 +27,10 @@ const MyEvents = () => {
                 headers: { Authorization: `Bearer ${token}` },
             });
             return data;
+        },
+        // Adding a fallback to ensure events is always an array
+        onError: (error) => {
+            console.error('Error fetching events:', error);
         }
     });
 
@@ -71,7 +75,7 @@ const MyEvents = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {currentEvents.map((event, idx) => (
+                        {currentEvents && currentEvents.length > 0 ? currentEvents.map((event, idx) => (
                             <tr key={event._id}>
                                 <td>{indexOfFirstEvent + idx + 1}</td>
                                 <td><img src={event.imageUrl} alt="Event" className="w-12 h-12 rounded" /></td>
@@ -83,7 +87,7 @@ const MyEvents = () => {
                                     <button onClick={() => { setIsOpen(true); setSelectedId(event._id); }} className="btn btn-xs text-red-600"><MdDelete /> Delete</button>
                                 </td>
                             </tr>
-                        ))}
+                        )) : <tr><td colSpan="5" className="text-center">No events found</td></tr>}
                     </tbody>
                 </table>
             </div>

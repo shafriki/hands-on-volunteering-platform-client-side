@@ -37,10 +37,11 @@ const MyJoiningEvent = () => {
     fetchJoinedEvents();
   }, [axiosSecure]); 
 
+  // Ensure `events` is always an array before doing `.slice()`
   const indexOfLastEvent = currentPage * itemsPerPage;
   const indexOfFirstEvent = indexOfLastEvent - itemsPerPage;
-  const currentEvents = events.slice(indexOfFirstEvent, indexOfLastEvent);
-  const totalPages = Math.ceil(events.length / itemsPerPage);
+  const currentEvents = Array.isArray(events) ? events.slice(indexOfFirstEvent, indexOfLastEvent) : [];
+  const totalPages = Math.ceil((Array.isArray(events) ? events.length : 0) / itemsPerPage);
 
   if (loading) return <div>Loading...</div>;
 

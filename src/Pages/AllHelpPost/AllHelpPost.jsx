@@ -67,7 +67,7 @@ const AllHelpPost = () => {
 
           <div className="mt-4">
             <h4 className="font-semibold">Comments:</h4>
-            {request.comments?.length > 0 ? (
+            {request.comments && request.comments.length > 0 ? (
               request.comments.map((c, index) => (
                 <p key={index} className="text-sm text-gray-600">
                   <strong>{c.userName || 'Anonymous'}:</strong> {c.text}  

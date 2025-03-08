@@ -12,11 +12,11 @@ import { Link } from 'react-router-dom';
 import LoadingSpinner from '../../components/LoadingSpinner/LoadingSpinner';
 
 const RecentEvents = () => {
-    const { data: recentEvents = [], isLoading, error } = useQuery({
+    const { data = [], isLoading, error } = useQuery({
         queryKey: ['recent-events'],
         queryFn: async () => {
             const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/recent-events`);
-            return data;
+            return data || [];  // Ensures it defaults to an empty array if no data is returned
         }
     });
 
@@ -55,7 +55,7 @@ const RecentEvents = () => {
                         autoplay={{ delay: 1600, disableOnInteraction: false }}
                         className="mySwiper"
                     >
-                        {recentEvents.map((event) => (
+                        {data.map((event) => (
                             <SwiperSlide key={event._id} className="relative">
                                 <div className="card cursor-pointer group text-white bg-[#071a07] opacity-80 shadow-xl">
                                     <figure>

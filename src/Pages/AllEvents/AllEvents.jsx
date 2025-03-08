@@ -14,10 +14,10 @@ const AllEvents = () => {
     const [location, setLocation] = useState('');
 
     const { data: events = [], isLoading, isError } = useQuery({
-        queryKey: ['events', searchTerm, category, location],  
+        queryKey: ['events', searchTerm, category, location],
         queryFn: async () => {
             const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/all-events`, {
-                params: { searchTerm, category, location },  
+                params: { searchTerm, category, location },
             });
             return data;
         },
@@ -26,7 +26,7 @@ const AllEvents = () => {
     if (isLoading) {
         return (
             <div className="text-center my-10 md:my-20">
-                <LoadingSpinner /> 
+                <LoadingSpinner />
             </div>
         );
     }
@@ -51,14 +51,14 @@ const AllEvents = () => {
                             placeholder="Search by event title"
                             className="input input-bordered w-full mb-4"
                             value={searchTerm}
-                            onChange={(e) => setSearchTerm(e.target.value)}  
+                            onChange={(e) => setSearchTerm(e.target.value)}
                         />
 
                         {/* Category Filter */}
                         <select
                             className="input input-bordered w-full mb-4"
                             value={category}
-                            onChange={(e) => setCategory(e.target.value)}  
+                            onChange={(e) => setCategory(e.target.value)}
                         >
                             <option value="">All Categories</option>
                             <option value="Sports">Sports</option>
@@ -77,7 +77,8 @@ const AllEvents = () => {
                 <section className="col-span-9 mx-3 md:mx-0">
                     <div className="max-w-screen-xl mx-5 my-10 md:mx-auto">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            {events.map((event) => {
+                            {/* Ensure events is always an array */}
+                            {(Array.isArray(events) && events.length > 0) ? events.map((event) => {
                                 // Split title into words and limit to 5 words
                                 const titleWords = event.title.split(' ');
                                 const limitedTitle = titleWords.slice(0, 5).join(' ') + (titleWords.length > 5 ? '...' : '');
@@ -97,22 +98,24 @@ const AllEvents = () => {
 
                                             {/* Event Details */}
                                             <p className="text-sm text-gray-500"><span className="font-bold">
-                                            <FaLocationCrosshairs className="inline-block mr-1" />
+                                                <FaLocationCrosshairs className="inline-block mr-1" />
                                             </span>{' '}{event.location}</p>
                                             <p className="text-sm text-gray-500"><span className="font-bold">
-                                            <BiCategory className="inline-block mr-1" />
+                                                <BiCategory className="inline-block mr-1" />
                                             </span>{' '}{event.category}</p>
                                             <p className="text-sm text-gray-500"><span className="font-bold">
-                                            <IoMdTimer className="inline-block mr-1" />
+                                                <IoMdTimer className="inline-block mr-1" />
                                             </span>{' '}{event.time}</p>
                                             <p className="text-sm text-gray-500"><span className="font-bold">
-                                            <MdOutlineDateRange className="inline-block mr-1" />
+                                                <MdOutlineDateRange className="inline-block mr-1" />
                                             </span>{' '}{event.date}</p>
                                         </div>
                                         <Link to={`/event-details/${event._id}`} className='btn w-full bg-green-300 mb-2'>See Details</Link>
                                     </div>
                                 );
-                            })}
+                            }) : (
+                                <p>No events found.</p>
+                            )}
                         </div>
                     </div>
                 </section>
